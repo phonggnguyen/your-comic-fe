@@ -40,9 +40,6 @@ export default defineNuxtConfig({
     '~/assets/sass/app.scss',
   ],
 
-  // plugins
-  plugins: ['~/plugins/navbar.ts'],
-
   // build
   build: {
     transpile: ['@headlessui/vue'],
@@ -53,7 +50,6 @@ export default defineNuxtConfig({
     'unplugin-icons/nuxt',
     '@intlify/nuxt3',
     '@pinia/nuxt',
-    '@nuxt/content',
     '@vueuse/nuxt',
     '@nuxtjs/eslint-module',
     'nuxt-windicss',
@@ -109,15 +105,5 @@ export default defineNuxtConfig({
       },
     },
     scan: true,
-  },
-
-  // content
-  content: {
-    markdown: {
-      mdc: true,
-    },
-    highlight: {
-      theme: 'github-dark',
-    },
   },
 })
