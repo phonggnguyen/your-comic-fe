@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-import { IApp } from '~/utils/app'
-
 export interface IMenuItem {
   type: 'link' | 'button'
   text: string
@@ -9,18 +7,9 @@ export interface IMenuItem {
 }
 
 const { t } = useLang()
-const app = useState<IApp>('app')
 const menus = computed((): IMenuItem[] => [
-  { type: 'link', text: t('pages.about.nav'), route: { name: 'about' } },
-  { type: 'link', text: t('pages.blank.nav'), route: { name: 'blank' } },
-  { type: 'link', text: t('pages.test.nav'), route: { name: 'test' } },
-  { type: 'link', text: t('pages.post.nav'), route: { name: 'post' } },
-  { type: 'link', text: t('pages.setting.nav'), route: { name: 'setting' } },
-  {
-    type: 'button',
-    text: t('pages.dashboard.nav'),
-    route: { name: 'dashboard' },
-  },
+  { type: 'link', text: t('for_you.nav'), route: { name: 'index' } },
+  { type: 'link', text: t('follow.nav'), route: { name: 'follow' } },
 ])
 </script>
 
@@ -28,20 +17,61 @@ const menus = computed((): IMenuItem[] => [
   <BuilderNavbar>
     <template #search>
       <div
-        class="text-white text-xs text-center py-1 px-4 lg:px-8 bg-primary-500 capitalize"
+        p="x-3 t-3"
+        display="flex"
+        align="items-center"
+        justify="between"
+        bg="white"
+        class="search"
+        box="border"
       >
-        <span class="mr-1">
-          {{ $t('banners.welcome', { app_name: app.name }) }}
-        </span>
-        <Anchor
-          class="underline font-bold"
-          :text="$t('others.learn_more')"
-          href="https://github.com/viandwi24/nuxt3-awesome-starter"
-        />
+        <div
+          w="1.6rem"
+          h="1.6rem"
+          m="r-1"
+          bg="logo-banner contain"
+          class="bg-logo-banner"
+        ></div>
+        <div
+          display="flex"
+          align="items-center"
+          justify="center"
+          bg="gray-100"
+          border="none rounded-2xl"
+          flex="1"
+          h="33px"
+          position="relative"
+          text="gray-300"
+          class="search-input"
+        >
+          <img
+            w="1.05rem"
+            h="1.05rem"
+            src="https://static3w.kuaikanmanhua.com/_nuxt/static-kkfront-mobile/image/search_icon.8cb94f3.png"
+            class="icon"
+          />
+          <span>搜索作品名</span>
+        </div>
+        <div m="mr-1" display="flex" align="items-center" class="booklist">
+          <img
+            w="1.05rem"
+            h="1.05rem"
+            src="https://static3w.kuaikanmanhua.com/_nuxt/static-kkfront-mobile/image/booklist_icon.40fddad.png"
+            class="icon"
+          />
+          <span>书架</span>
+        </div>
       </div>
     </template>
     <template #menu>
-      <div class="relative flex items-center ml-auto">
+      <div
+        w="full"
+        align="items-center"
+        justify="center"
+        display="flex"
+        po="relative"
+        m="l-auto"
+      >
         <nav
           class="text-sm leading-6 font-semibold text-gray-600 dark:text-gray-300"
           role="navigation"
@@ -53,32 +83,13 @@ const menus = computed((): IMenuItem[] => [
                 :to="item.route ? item.route : undefined"
                 :href="item.href ? item.href : undefined"
                 class="hover:no-underline hover:text-slate-900 hover:dark:text-white capitalize"
-                >{{ item.text }}</Anchor
               >
-              <Button
-                v-else-if="item.type === 'button'"
-                :text="item.text"
-                size="xs"
-                class="font-extrabold capitalize"
-                :to="item.route ? item.route : undefined"
-                :href="item.href ? item.href : undefined"
-              />
+                {{ item.text }}
+                <p></p>
+              </Anchor>
             </li>
           </ul>
         </nav>
-        <div
-          class="flex space-x-4 border-l ml-6 pl-6 border-gray-900/10 dark:border-gray-50/[0.2]"
-        >
-          <LanguageSwitcher />
-          <ThemeSwitcher />
-          <Anchor
-            class="hover:no-underline hover:text-slate-900 hover:dark:text-white text-lg flex self-center items-center"
-            href="https://github.com/viandwi24/nuxt3-awesome-starter"
-            title="Github"
-          >
-            <IconMdi:github-face />
-          </Anchor>
-        </div>
       </div>
     </template>
   </BuilderNavbar>

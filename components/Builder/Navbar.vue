@@ -3,7 +3,7 @@
 <template>
   <div
     ref="navbar"
-    class="backdrop-filter backdrop-blur-md top-0 z-40 w-full flex-none transition-colors duration-300 lg:z-50 border-b border-gray-900/10 dark:border-gray-50/[0.2] bg-white/[0.5] dark:bg-slate-900/[0.5]"
+    class="backdrop-filter backdrop-blur-md top-0 z-40 w-full flex-none transition-colors duration-300 lg:z-50 border-gray-900/10 dark:border-gray-50/[0.2] bg-white/[0.5] dark:bg-slate-900/[0.5]"
   >
     <div id="navbar-banner" class="banner">
       <slot name="search" />
@@ -13,21 +13,6 @@
         <div class="relative flex items-center">
           <!-- menu -->
           <slot name="menu" />
-          <!-- options:toggle -->
-          <div class="flex-1 flex justify-end lg:hidden">
-            <button
-              class="flex items-center focus:outline-none"
-              aria-label="Toggle Options Menu"
-              @click="toggleOptions()"
-            >
-              <span
-                class="flex items-center text-gray-600 dark:text-gray-300 text-sm"
-                aria-hidden="true"
-              >
-                <icon-fa-solid:ellipsis-v />
-              </span>
-            </button>
-          </div>
         </div>
       </div>
     </div>
@@ -51,10 +36,19 @@
 
 a.router-link-active {
   font-weight: bold;
+  p {
+    margin: 0 auto;
+    position: relative;
+    top: -0.025rem;
+    width: 1.4rem;
+    height: 0.15rem;
+    background: theme('colors.primary.400');
+    border-radius: 0.075rem;
+  }
 }
 
 a.router-link-exact-active {
-  color: theme('colors.slate.900');
+  color: theme('colors.primary.900');
 }
 
 html.dark {

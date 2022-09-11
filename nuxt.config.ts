@@ -38,6 +38,7 @@ export default defineNuxtConfig({
     'virtual:windi-utilities.css',
     '~/assets/sass/vendor.scss',
     '~/assets/sass/app.scss',
+    'swiper/css',
   ],
 
   // build

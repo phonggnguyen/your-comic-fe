@@ -59,8 +59,12 @@ export default defineConfig({
   },
   theme: {
     extend: {
+      backgroundImage: {
+        'logo-banner':
+          'url(https://static3w.kuaikanmanhua.com/_nuxt/static-kkfront-mobile/image/logo.9fb4c38.png)',
+      },
       maxWidth: {
-        '8xl': '90rem',
+        '8xl': '768px',
       },
       colors: {
         primary: MyTheme.colors.green,

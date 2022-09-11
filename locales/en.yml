@@ -70,3 +70,7 @@ others:
   copy: copy
   enabled: enabled
   disabled: disabled
+for_you:
+  nav: for you
+follow:
+  nav: follow
