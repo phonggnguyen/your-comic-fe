@@ -60,8 +60,9 @@ export default defineConfig({
   theme: {
     extend: {
       backgroundImage: {
-        'logo-banner':
+        logo_banner:
           'url(https://static3w.kuaikanmanhua.com/_nuxt/static-kkfront-mobile/image/logo.9fb4c38.png)',
+        classification_entry_bg: 'url(/images/classification_entry_bg.png)',
       },
       maxWidth: {
         '8xl': '768px',

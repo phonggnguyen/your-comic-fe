@@ -29,8 +29,8 @@ const menus = computed((): IMenuItem[] => [
           w="1.6rem"
           h="1.6rem"
           m="r-1"
-          bg="logo-banner contain"
-          class="bg-logo-banner"
+          bg="logo_banner contain"
+          class="bg-logo_banner"
         ></div>
         <div
           display="flex"

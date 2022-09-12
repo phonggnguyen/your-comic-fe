@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Autoplay } from 'swiper'
+import Entry from '~~/components/Entry/index.vue'
 // composable
 // const { t } = useLang()
 
@@ -41,6 +42,7 @@ definePageMeta({
             />
           </SwiperSlide>
         </Swiper>
+        <Entry />
       </PageSection>
     </PageBody>
   </PageWrapper>
